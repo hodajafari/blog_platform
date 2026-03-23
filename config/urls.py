@@ -17,14 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from blog import views
-from django.contrib.auth import get_user_model
-
-def create_admin():
-    User = get_user_model()
-    if not User.objects.filter(username='admin').exists():
-        User.objects.create_superuser('admin', 'admin@example.com', 'admin12345')
-
-create_admin()
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
