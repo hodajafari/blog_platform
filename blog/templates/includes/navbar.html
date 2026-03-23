@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+
+    <a class="navbar-brand" href="/">Blog</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+
+      <form method="GET" action="/" class="d-flex mx-auto" style="width: 40%;">
+        <div class="input-group">
+          <input 
+            class="form-control" 
+            type="search" 
+            name="q" 
+            value="{{ query }}" 
+            placeholder="Search posts..."
+          >
+          <button class="btn btn-outline-light">
+            🔍
+          </button>
+        </div>
+      </form>
+
+      
+      <ul class="navbar-nav ms-auto">
+
+        {% if user.is_authenticated %}
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'create_post' %}">Create Post</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/accounts/logout/">Logout</a>
+          </li>
+
+        {% else %}
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">Register</a>
+          </li>
+
+        {% endif %}
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
