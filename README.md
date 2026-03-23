@@ -66,7 +66,7 @@ A fully-featured blog platform built with Django, supporting user interaction, c
 ---
 ## Live Demo
 
-[Open App]((https://blog-platform-0uly.onrender.com))
+[Open App](https://blog-platform-0uly.onrender.com)
 
 ## 👨‍💻 Author
 
